@@ -22,7 +22,8 @@ app.get('/', function (req, res) {
     res.send('Home!');
 });
 
-app.post("/notify", function (request, response) {
+//too lazy to change trigged pathName lmao
+app.post("/dreams", function (request, response) {
   response.status(200).end();
   console.log('Someone called me!!');
 
