@@ -12,7 +12,7 @@ const app = express();
 
 app.use(morgan('common'));
 app.use(morgan('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.text());
 
 
 const DATABASE_URL = process.env.DATABASE_URL;
@@ -30,8 +30,8 @@ app.post("/dreams", function (request, response) {
   console.log('------------');
   console.log(request.body);
   console.log('------------');
-  // let obj = JSON.parse (request.body);
-  // console.log(obj);
+  let obj = JSON.parse(request.body);
+  console.log(obj);
   // console.log(Object.keys(obj));
   console.log('------------');
 
