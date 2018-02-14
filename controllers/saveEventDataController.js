@@ -23,4 +23,4 @@ const saveEventData = (eventType, customerEmail, campaignEventDataId) => {
     //     });
 };
 
-module.exports = {  };
+module.exports = { saveEventData };
