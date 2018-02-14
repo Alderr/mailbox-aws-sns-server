@@ -39,11 +39,7 @@ app.post("/dreams", function (request, response) {
   // console.log(Object.keys(obj));
   console.log('------MESSAGE------');
 
-  const eventType = message.eventType.toLowerCase();
-  const campaignEventDataId = message.mail.tags['campaign-event-data-id'][0];
-  const email = message.mail.destination[0];
-
-  saveEventData(eventType, email, campaignEventDataId);
+  saveEventData(message);
 
 });
 
