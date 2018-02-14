@@ -32,7 +32,7 @@ const saveEventType = (eventDataCampaign, eventType, email) => {
     }
 
     else {
-      return Promise.reject(response.send('Nope.'));
+      return Promise.reject('Nope. no such event type');
     }
 }
 module.exports = { saveEventData };
