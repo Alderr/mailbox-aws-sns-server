@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise;
 
 
 const CampaignEventDataSchema = mongoose.Schema({
-    send:
+    delivery:
       {
           emails: [
               { type: String, required: true }

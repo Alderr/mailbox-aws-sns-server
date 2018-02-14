@@ -34,10 +34,16 @@ app.post("/dreams", function (request, response) {
   let message = JSON.parse(obj['Message']);
   console.log(message);
   console.log(message.eventType);
-  console.log(message.mail.tags);
+  console.log('Destination', message.mail.destination[0]);
+  console.log(message.mail.tags['campaign-event-data-id'][0]);
   // console.log(Object.keys(obj));
   console.log('------MESSAGE------');
 
+  const eventType = message.eventType;
+  const campaignEventDataId = message.mail.tags['campaign-event-data-id'][0];
+  const email = message.mail.destination[0];
+
+  saveEventData(eventType, email, campaignEventDataId);
 
 });
 
