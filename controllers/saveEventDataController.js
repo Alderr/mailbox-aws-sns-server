@@ -7,20 +7,17 @@ const saveEventData = (eventType, customerEmail, campaignEventDataId) => {
         .then((data) => {
             if (data) {
                 console.log(data.eventType);
-                saveEventType(data, eventType, customerEmail);
-                return data.save();
+                return saveEventType(data, eventType, customerEmail);
             }
             else {
-                response.send('Nope.');
                 return Promise.reject(response.send('Nope.'));
             }
         })
         .then(res => {
           console.log(res);
-          return response.status(201).send('Added event data.');
+          return 'Added event data.';
         })
         .catch((err) => {
-            response.send(err);
             console.log(err);
         });
 };
