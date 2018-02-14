@@ -29,11 +29,14 @@ app.post("/dreams", function (request, response) {
 
   console.log('------------');
   console.log(request.body);
-  console.log('------------');
+  console.log('------MESSAGE------');
   let obj = JSON.parse(request.body);
-  console.log(obj);
+  let message = JSON.parse(obj['Message']);
+  console.log(message);
+  console.log(message.eventType);
+  console.log(message.mail.tags);
   // console.log(Object.keys(obj));
-  console.log('------------');
+  console.log('------MESSAGE------');
 
 
 });
