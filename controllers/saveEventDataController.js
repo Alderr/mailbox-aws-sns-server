@@ -10,7 +10,7 @@ const saveEventData = (eventType, customerEmail, campaignEventDataId) => {
                 return saveEventType(data, eventType, customerEmail);
             }
             else {
-                return Promise.reject(response.send('Nope.'));
+                return Promise.reject('Nope.');
             }
         })
         .then(res => {
